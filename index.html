@@ -24,7 +24,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%274%27 y=%276%27 width=%2724%27 height=%2720%27 rx=%273%27 fill=%27%23efe8d8%27 stroke=%27%231b2432%27 stroke-width=%272%27/%3E%3Crect x=%274%27 y=%2714%27 width=%2724%27 height=%274%27 fill=%27%231d4ed8%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="vibe.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"{{компания}}","description":"Эвакуатор, манипулятор и экскаватор-погрузчик: цену и время подачи называем до выезда.","url":"{{адрес сайта}}","image":"{{адрес сайта}}/assets/og.jpg","telephone":"{{телефон}}","openingHours":"{{часы}}","areaServed":"{{город}}","address":{"@type":"PostalAddress","streetAddress":"{{адрес}}","addressLocality":"{{город}}","addressCountry":"RU"},"priceRange":"уточнить"}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"{{компания}}","description":"Эвакуатор, манипулятор и экскаватор-погрузчик: цену и время подачи называем до выезда.","url":"{{адрес сайта}}","image":"{{адрес сайта}}/assets/og.jpg","telephone":"+7 911 332-11-11","openingHours":"{{часы}}","areaServed":"{{город}}","address":{"@type":"PostalAddress","streetAddress":"{{адрес}}","addressLocality":"{{город}}","addressCountry":"RU"},"priceRange":"уточнить"}
 </script>
 <style>
   /* ---- тема: шесть цветов, два шрифта --------------------------------- */
@@ -319,6 +319,11 @@
   }
   .hero__copy .v-display--xl { font-size: clamp(2rem, 4.4vw, 4rem); max-width: 17ch; }
   @media (max-width: 860px) { .hero__copy .v-display--xl { font-size: clamp(1.7rem, 7.4vw, 2.4rem); } }
+  .works { list-style: none; margin: var(--v-7) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--v-5); }
+  .works li { position: relative; overflow: hidden; border-radius: var(--v-radius); background: var(--v-surface); box-shadow: 0 14px 34px -18px rgb(var(--v-shadow-color) / .5); }
+  .works img { display: block; width: 100%; height: clamp(11rem, 21vw, 17rem); object-fit: cover; }
+  .works span { position: absolute; left: 0; bottom: 0; padding: .55rem 1rem; font-family: var(--v-font-display); font-weight: 700; font-size: var(--v-t-sm); color: var(--v-accent-ink); background: var(--v-accent); border-radius: 0 var(--v-radius) 0 0; }
+  @media (max-width: 700px) { .works { grid-template-columns: 1fr; gap: var(--v-4); } .works img { height: 12rem; } }
   .kz__park img { width: 100%; height: auto; display: block; border-radius: var(--v-radius); box-shadow: 0 18px 40px -18px rgb(var(--v-shadow-color) / .5); }
 </style>
 </head>
@@ -329,8 +334,8 @@
   <header class="bar">
     <a class="bar__mark" href="#top"><i aria-hidden="true"></i>{{компания}}</a>
     <nav class="bar__right" aria-label="Быстрые ссылки">
-      <a class="bar__tel" href="tel:{{телефон}}">{{телефон}}</a>
-      <a class="v-btn" href="tel:{{телефон}}">Позвонить</a>
+      <a class="bar__tel" href="tel:+79113321111">+7 911 332-11-11</a>
+      <a class="v-btn" href="tel:+79113321111">Позвонить</a>
     </nav>
   </header>
 
@@ -356,15 +361,15 @@
         <div class="hero__note" data-v-cue="0 0.8 0 0.12" data-v-rise="0">
           <span class="v-label">Принимаем звонки</span>
           <span class="v-nums">{{часы}}</span>
-          <span class="hero__int">Подача {{время-подачи}}</span>
+          <span class="hero__int">Подача в день обращения</span>
         </div>
 
         <div class="v-copy v-copy--lead hero__copy" data-v-cue="0 0.86 0 0.12">
           <h1 class="v-display v-display--xl" data-v-kinetic="lines">Эвакуатор, манипулятор, экскаватор-погрузчик в {{город}} – цена до выезда</h1>
           <p class="v-lede">Назовите, что нужно перевезти, поднять или выкопать, и адрес. Скажем, какая машина приедет, сколько это стоит и когда будет на месте.</p>
           <div class="hero__cta">
-            <a class="v-btn" href="tel:{{телефон}}">Позвонить</a>
-            <a class="hero__tel" href="tel:{{телефон}}">номер <b>{{телефон}}</b></a>
+            <a class="v-btn" href="tel:+79113321111">Позвонить</a>
+            <a class="hero__tel" href="tel:+79113321111">номер <b>+7 911 332-11-11</b></a>
           </div>
         </div>
       </div>
@@ -377,14 +382,14 @@
           <p class="v-body v-soft">Найдите свой случай: под него есть машина, а цену и время подачи называем до выезда.</p>
         </div>
         <ol class="cargo" data-v-in data-v-stagger="60">
-          <li><h3>Эвакуация легкового авто</h3><p>После поломки или ДТП, из двора и с обочины. Грузим на платформу, не на буксир.</p></li>
-          <li><h3>Перевозка авто между городами</h3><p>Покупка с рук, возврат из ремонта. Цена за рейс названа до выезда.</p></li>
-          <li><h3>Доставка стройматериалов манипулятором</h3><p>Поддоны, плиты, блоки. Привезём и сами сгрузим краном на участок.</p></li>
-          <li><h3>Подъём и установка груза</h3><p>Бытовки, ёмкости, заборные секции, крупные вещи. Манипулятор ставит туда, куда нужно.</p></li>
-          <li><h3>Копка траншей и котлованов</h3><p>Под фундамент, трубы и кабель. Экскаватор-погрузчик с ковшом нужной ширины.</p></li>
-          <li><h3>Погрузка и перемещение грунта</h3><p>Песок, щебень, земля. Погрузим в самосвал или переложим по участку.</p></li>
-          <li><h3>Расчистка и планировка участка</h3><p>Снять дёрн, выровнять площадку, убрать завал и разобрать старую постройку.</p></li>
-          <li><h3>Несколько работ на одном объекте</h3><p>Привезли материал, выкопали, поставили. Одна заявка вместо трёх звонков разным людям.</p></li>
+          <li><h3>Демонтаж любых объектов</h3><p>Старые постройки, ограждения, фундаменты. Разберём технику и вывезем остатки.</p></li>
+          <li><h3>Вывоз мусора и строительных отходов</h3><p>Погрузим экскаватором-погрузчиком и увезём с участка.</p></li>
+          <li><h3>Земляные работы</h3><p>Котлованы, траншеи, выемка грунта под фундамент и коммуникации.</p></li>
+          <li><h3>Подготовка участка</h3><p>Расчистка, выравнивание, подготовка площадки под строительство.</p></li>
+          <li><h3>Благоустройство</h3><p>Планировка и приведение участка в порядок после работ.</p></li>
+          <li><h3>Аренда спецтехники с оператором</h3><p>Экскаватор-погрузчик с оператором на нужное вам время.</p></li>
+          <li><h3>Эвакуация автомобиля</h3><p>Перевезём легковой автомобиль на платформе-эвакуаторе.</p></li>
+          <li><h3>Перевозка и подъём груза манипулятором</h3><p>Привезём груз и сами сгрузим краном на месте.</p></li>
         </ol>
         <div class="turn" data-v-in data-v-in-self>
           <span class="v-label">Как считаем</span>
@@ -431,10 +436,25 @@
           </div>
 
           <div class="kz__after" data-v-cue="0.74 1 0.06 0">
-            <a class="v-btn" href="tel:{{телефон}}">Позвонить</a>
+            <a class="v-btn" href="tel:+79113321111">Позвонить</a>
             <span class="kz__hint">Лучше фото места или груза – пришлите, машину подберём сами</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="v-section" data-v-act="flow" data-v-drift="#efe8d8" id="raboty" aria-label="Наши работы">
+      <div class="v-wrap">
+        <div class="poka__head" data-v-in data-v-stagger="70">
+          <h2 class="v-display v-display--lg">Так выглядит работа техники</h2>
+          <p class="v-body v-soft">Фото с объектов: демонтаж, подготовка участка, земляные работы, техника в деле.</p>
+        </div>
+        <ul class="works" data-v-in data-v-stagger="80">
+          <li><img src="assets/rab-demontazh.webp" alt="Экскаватор-погрузчик на участке после демонтажа" width="752" height="292" loading="lazy" decoding="async"><span>Демонтаж</span></li>
+          <li><img src="assets/rab-uchastok.webp" alt="Подготовка участка: мешки с мусором и щебень, погрузчик на заднем плане" width="784" height="292" loading="lazy" decoding="async"><span>Подготовка участка</span></li>
+          <li><img src="assets/rab-zemlya.webp" alt="Котлован зимой у кирпичного дома" width="744" height="376" loading="lazy" decoding="async"><span>Земляные работы</span></li>
+          <li><img src="assets/rab-tehnika.webp" alt="Экскаватор-погрузчик работает на заснеженном участке" width="784" height="412" loading="lazy" decoding="async"><span>Спецтехника в деле</span></li>
+        </ul>
       </div>
     </section>
 
@@ -472,7 +492,7 @@
         </div>
         <div class="v-copy v-copy--top road__copy" data-v-cue="0.3 0.68 0.05 0.05">
           <span class="v-label">Подача</span>
-          <h2 class="v-display v-display--lg">Приезжаем к оговорённому времени: {{время-подачи}}</h2>
+          <h2 class="v-display v-display--lg">Подача техники – в день обращения</h2>
           <p class="v-lede">Если что-то идёт не так, предупреждаем заранее, а не по дороге.</p>
         </div>
         <div class="v-copy v-copy--top road__copy" data-v-cue="0.66 1 0.05 0">
@@ -516,14 +536,14 @@
             <h2 class="v-display v-display--lg">Опишите задачу и адрес</h2>
             <p class="v-lede">Ответим, какая машина подойдёт, сколько это стоит и когда приедем.</p>
             <div class="close__cta">
-              <a class="v-btn" href="tel:{{телефон}}" data-v-magnet="0.22" data-v-rise="0">Позвонить</a>
-              <a class="close__tel" href="tel:{{телефон}}">{{телефон}}</a>
+              <a class="v-btn" href="tel:+79113321111" data-v-magnet="0.22" data-v-rise="0">Позвонить</a>
+              <a class="close__tel" href="tel:+79113321111">+7 911 332-11-11</a>
             </div>
             <p class="close__hint">Удобнее фото – отправьте фото места или груза, машину подберём сами.</p>
           </div>
           <div class="close__meta" data-v-in data-v-stagger="60">
             <span><b>Принимаем звонки</b>{{часы}}</span>
-            <span><b>Подача</b>{{время-подачи}}</span>
+            <span><b>Подача</b>в день обращения</span>
             <span><b>Ездим</b>{{зона-выезда}}</span>
             <span data-slot-optional><b>Адрес</b>{{адрес}}, {{город}}</span>
           </div>
